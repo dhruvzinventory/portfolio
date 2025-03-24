@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhruv Shukla | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #64ffda;
+            --accent: #ccd6f6;
+            --bg: #020c1b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--accent);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .tagline {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .tagline::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        /* Sections */
+        section {
+            margin: 6rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.6s;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* Projects Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .project-card {
+            background: rgba(10, 25, 47, 0.5);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .skill-tag {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--secondary);
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--secondary);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background: rgba(10, 25, 47, 0.5);
+            border-radius: 8px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 24px;
+            width: 16px;
+            height: 16px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+
+        /* Education */
+        .education-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .education-item {
+            background: rgba(10, 25, 47, 0.5);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        /* Contact */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .tagline {
+                font-size: 2rem;
+            }
+            
+            section {
+                margin: 4rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div>
+                <h1>Dhruv Shukla</h1>
+                <h2 class="tagline">Turning Ideas into Interactive Reality</h2>
+                <p>Aspiring Problem Solver & Full-Stack Developer</p>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a curious and aspiring problem solver passionate about Data Structures, Algorithms, and logical reasoning. My expertise lies in:</p>
+            <ul style="margin: 1rem 0; padding-left: 2rem;">
+                <li>Solving complex DSA problems</li>
+                <li>Developing efficient algorithms</li>
+                <li>Building interactive web experiences</li>
+                <li>Applying critical thinking to real-world challenges</li>
+            </ul>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-tag">Java</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">C/C++</div>
+                <div class="skill-tag">HTML/CSS/JS</div>
+                <div class="skill-tag">Data Structures</div>
+                <div class="skill-tag">Algorithms</div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Instagram Clone</h3>
+                    <p>Full-stack web application replicating core Instagram features with user authentication and post sharing</p>
+                </div>
+                <div class="project-card">
+                    <h3>Tic Tac Toe AI</h3>
+                    <p>Interactive game with multiple difficulty levels using minimax algorithm</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Data Analyst Intern</h3>
+                    <p>Accenture · Virtual Internship · 2023</p>
+                    <p>Performed data analysis and visualization tasks using Python</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Frontend Developer</h3>
+                    <p>Third Party Client · 2022-2023</p>
+                    <p>Developed responsive web interfaces using HTML/CSS/JavaScript</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-list">
+                <div class="education-item">
+                    <h3>B.Tech Computer Science</h3>
+                    <p>Galgotias University · 2022-2026</p>
+                </div>
+                <div class="education-item">
+                    <h3>Higher Secondary</h3>
+                    <p>Mercy Memorial School · 2020-2022</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:dhruv.22scse1010156@galgotiasuniversity.edu.in">dhruv.22scse1010156@galgotiasuniversity.edu.in</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/xyz" target="_blank">linkedin.com/in/dhruv</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/xyz" target="_blank">github.com/dhruv</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
